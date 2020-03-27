@@ -1,5 +1,13 @@
 <!--pages/home/home.wxml-->
-<!-- 这些都是一个个内置的组件 -->
-<text class="title">Hello World</text>
-<button size="mini">按钮</button>
-<image src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></image>
+<!-- 1.小程序的数据绑定 {{}} -->
+<view>Hello {{ name }}</view>
+<view>我的年龄: {{ age + 20 }}</view>
+
+<!-- 2.列表展示: wx:for -->
+<view wx:for="{{students}}">{{item.name}}--{{item.age}}</view>
+
+<!-- 3.事件监听改变data -->
+
+<view>当前计数: {{counter}}</view>
+<button size="mini" bindtap="handleBtnClick">+</button>
+<button size="mini" bindtap="handleSubtraction">-</button>
