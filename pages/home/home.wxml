@@ -1,5 +1,3 @@
 <!--pages/home/home.wxml-->
 <!-- 这些都是一个个内置的组件 -->
-<text class="title">Hello World</text>
-<button size="mini">按钮</button>
-<image src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></image>
+<text class="title">你好，微信</text>
