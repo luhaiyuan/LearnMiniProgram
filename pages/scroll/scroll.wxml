@@ -1,0 +1,23 @@
+<!-- 1.水平滚动: scroll-x -->
+<scroll-view class="container1" scroll-x>
+  <view wx:for="{{10}}" class="item1">{{item}}</view>
+</scroll-view>
+
+<!-- 2.垂直滚动: scroll-y -->
+<scroll-view class="container2" scroll-y>
+  <view wx:for="{{10}}" class="item2">{{item}}</view>
+</scroll-view>
+
+<!-- 3.其他补充
+  bindscroll
+  upper-threshold 距离顶部或者左边多少，触发bindscrolltoupper
+  lower-threshold
+  bindscrolltoupper
+  bindscrolltolower
+
+  scroll-top 设置竖向滚动条位置
+  scroll-left 设置横向滚动条位置
+ -->
+<scroll-view lower-threshold="100"  class="container2" bindscroll="handleScroll" bindscrolltolower="handleBottom" scroll-y>
+  <view wx:for="{{10}}" class="item2">{{item}}</view>
+</scroll-view>

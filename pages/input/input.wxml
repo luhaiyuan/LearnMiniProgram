@@ -1,0 +1,36 @@
+<!-- 1.input的基本使用 -->
+
+<!-- 2. value： input中的默认值 -->
+<input value="哈哈"></input>
+<!-- 3. type: 决定键盘类型(文本输入键盘/数字/身份证) -->
+<!-- <input type="text"></input>
+<input type="number"></input>
+<input type="idcard"></input>
+<input type="digit"></input> -->
+
+<!-- 4.password：暗文 -->
+<input password></input>
+
+<!-- 5.placeholder： 占位文字 -->
+<input placeholder="请输入内容"></input>
+
+<!-- 6.disabled -->
+<input disabled></input>
+<!-- 7.placeholder placeholder-style -->
+<input type="text" placeholder="请输入" placeholder-style="color:#ccc;"></input>
+<input type="text" placeholder="请输入" placeholder-class="test"></input>
+<!-- 8.maxlength -->
+<input maxlength="10"></input>
+
+<!-- 9.confirm-type: 
+     send search next go done(默认)
+设置键盘右下角按钮的文字，仅在type='text'时生效 -->
+<!-- <input type="text" confirm-type="done"></input>
+<input type="text" confirm-type="send"></input>
+<input type="text" confirm-type="search"></input>
+<input type="text" confirm-type="next"></input>
+<input type="text" confirm-type="go"></input> -->
+
+
+<!-- input绑定事件 -->
+<input bindinput="handleInput" bindfocus="handleFocus" bindblur="handleBlur"></input>
