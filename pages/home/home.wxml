@@ -1,5 +1,5 @@
 <!--pages/home/home.wxml-->
 <!-- 这些都是一个个内置的组件 -->
+<!-- text组件类似span -->
 <text class="title">Hello World</text>
 <button size="mini">按钮</button>
-<image src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></image>
