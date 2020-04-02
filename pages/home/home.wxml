@@ -1,8 +1,37 @@
 <!--pages/home/home.wxml-->
 <!-- 这些都是一个个内置的组件 -->
 <text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
+<text class="title">Hello World</text>
 <button size="mini">按钮</button>
-<image src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></image>
 
-<view>知识点1</view>
-<view>哈哈哈哈</view>
+<!-- 2.获取用户信息的方式 -->
+<button size="mini"
+        open-type="getUserInfo"
+        bindgetuserinfo="handleGetUserInfo">
+  获取授权
+</button>
+
+<!-- 3.使用open-data组件展示用户的信息 -->
+<!-- <open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data> -->
+
+
+<view bindtap="handleViewClick">{{ message }}</view>
