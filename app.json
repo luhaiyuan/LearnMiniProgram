@@ -1,9 +1,8 @@
 {
   "pages": [
-    "pages/home/home",
     "pages/wxss/wxss",
-    "pages/about/about",
-    "pages/wxss/haha"
+    "pages/home/home",
+    "pages/about/about"
   ],
   "sitemapLocation": "sitemap88.json"
 }

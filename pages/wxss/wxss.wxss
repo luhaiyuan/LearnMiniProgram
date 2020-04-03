@@ -1,4 +1,9 @@
 /* pages/wxss/wxss.wxss */
+/* 导入样式 */
+@import './style/box.wxss';
+@import './style/content.wxss';
+@import './style/weui-searchbar.wxss';
+
 .box {
   color: blue;
   font-size: 32px;
@@ -8,7 +13,7 @@
   background-color: purple!important;
 }
 
-.box1 {
+/* .box1 {
   width: 100px;
   height: 100px;
   background-color: orange;
@@ -18,12 +23,12 @@
   width: 200rpx;
   height: 200rpx;
   background-color: purple;
-}
+} */
 
-.content1 {
+/* .content1 {
   font-size: 32px;
 }
 
 .content2 {
   font-size: 64rpx;
-}
+} */

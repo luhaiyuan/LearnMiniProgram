@@ -1,4 +1,8 @@
 /* 全局样式，在哪个页面中都能用 */
+
+/* 导入抽离的样式 */
+@import './style/btn.wxss';
+
 .container {
   color: green;
   font-size: 60px;
