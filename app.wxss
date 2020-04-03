@@ -1,0 +1,9 @@
+/* 全局样式，在哪个页面中都能用 */
+.container {
+  color: green;
+  font-size: 60px;
+}
+
+.content {
+  background-color: orange;
+}

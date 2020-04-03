@@ -1,5 +1,6 @@
 <!--pages/home/home.wxml-->
-<!-- 这些都是一个个内置的组件 -->
 <text class="title">Hello World</text>
 <button size="mini">按钮</button>
-<image src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></image>
+
+<!-- 1.hidden属性 -->
+<view hidden>哈哈哈</view>
