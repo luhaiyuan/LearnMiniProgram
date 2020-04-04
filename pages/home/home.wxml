@@ -1,5 +1,62 @@
 <!--pages/home/home.wxml-->
-<!-- 这些都是一个个内置的组件 -->
-<text class="title">Hello World</text>
-<button size="mini">按钮</button>
-<image src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></image>
+<!-- 1.事件处理的回顾 -->
+<button bindtap="handleBtnClick" size="mini">按钮1</button>
+<button bind:tap="handleBtnClick" size="mini">按钮2</button>
+<button catch:tap="handleBtnClick" size="mini">按钮3</button>
+
+<!-- 2.常见的事件
+        两个注意点:
+          touchcancel：在某些特定场景下触发(比如来电打断)
+          tap事件和longpress事件通常只会触发其中一个
+ -->
+<view class="box"
+      bindtouchstart="handleTouchStart"
+      bindtouchmove="handleTouchMove"
+      bindtouchend="handleTouchEnd"
+      bindtap="handleTap"
+      bindlongpress="handleLongpress">
+</view>
+
+
+<!-- 3.事件对象的分析 -->
+<!-- 
+  touches和changedTouches的区别
+    1.在touched中不同
+    2.多手指触摸时不同
+ -->
+<button id="btn" bindtap="handleEventClick"
+        bindtouchend="handleEventEnd">
+  事件对象
+</button>
+
+<view class="outer" id="outer" bindtap="handleOuter">
+  外层的view
+  <view id="inner" class="inner" bindtap="handleInner">
+    内层的view
+  </view>
+</view>
+
+
+<!-- 4.事件的传递参数 -->
+<view class="container">
+  <block wx:for="{{titles}}" wx:key="index">
+    <view class="item" bindtap="handleItemClick"
+          data-index="{{index}}"
+          data-item="{{item}}"
+      >
+      {{item}}
+    </view>
+  </block>
+</view>
+
+
+<!-- 5.事件冒泡和事件捕获
+       bind：会一层层传递
+       catch: 阻止事件的进一步传递
+ -->
+<view>--------事件冒泡和事件捕获---------</view>
+<view class="view1" capture-bind:tap="handleCaptureView1" bindtap="handleBindView1">
+  <view class="view2" capture-bind:tap="handleCaptureView2" catchtap="handleBindView2">
+    <view class="view3" capture-bind:tap="handleCaptureView3" bindtap="handleBindView3"></view>
+  </view>
+</view>
