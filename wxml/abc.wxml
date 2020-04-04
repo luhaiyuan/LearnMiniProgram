@@ -1,0 +1,3 @@
+<template name="abc">
+  <button>按钮abc</button>
+</template>

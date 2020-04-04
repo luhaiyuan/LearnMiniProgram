@@ -1,0 +1,7 @@
+<!-- 使用include循环导入：可以写在标签外面，也可以写在标签里面 -->
+<!-- <include src="./nav.wxml" /> -->
+
+<view>
+  <include src="./nav.wxml" />
+  <view>标题</view>
+</view>

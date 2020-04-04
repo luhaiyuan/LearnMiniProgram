@@ -1,0 +1,10 @@
+<!-- 导入模板
+  不能使用import递归导入，include也不可以
+  <import src="./abc.wxml" />
+  <include src="./abc.wxml" />
+ -->
+
+<template name="contentItem">
+  <button size="mini">{{ btnText }}</button>
+  <view>{{ content }}</view>
+</template>

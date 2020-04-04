@@ -1,5 +1,10 @@
 <!--pages/home/home.wxml-->
+<include src="/wxml/header.wxml" />
+
+
 <!-- 这些都是一个个内置的组件 -->
 <text class="title">Hello World</text>
 <button size="mini">按钮</button>
 <image src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></image>
+
+<include src="/wxml/footer.wxml" />

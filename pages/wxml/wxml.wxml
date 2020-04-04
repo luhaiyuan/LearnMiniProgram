@@ -1,0 +1,117 @@
+<!--pages/wxml/wxml.wxml-->
+<!-- 1.wxml的格式 -->
+
+<!-- 2.Mustache语法 -->
+<view>{{ message }}</view>
+<view>{{ firstName + ' ' + lastName }}</view>
+<view>{{ age >= 18 ? '成年人' : '未成年人' }}</view>
+<view>时间: {{nowTime}}</view>
+
+<button bindtap="handleSwitchColor">切换颜色</button>
+<view class="box {{ isActive ? 'active' : '' }}">哈哈哈</view>
+
+
+<!-- 条件判断 -->
+<view>----------条件判断----------</view>
+<!-- 1.wx:if的使用 -->
+<button size="mini" bindtap="handleSwitchShow">切换显示</button>
+<view wx:if="{{isShow}}">嘻嘻嘻</view>
+
+<!-- wx:elif wx:else -->
+<button bindtap="handleIncrement">分数递增</button>
+<view wx:if="{{score >= 90}}">优秀</view>
+<view wx:elif="{{score >= 80}}">良好</view>
+<view wx:elif="{{score >= 60}}">及格</view>
+<view wx:else>不及格</view>
+
+
+<!-- hidden属性：每一个组件都有的属性 -->
+<view hidden="{{false}}">我是hidden属性控制的内容111</view>
+
+<!-- wx:if 和 hidden属性在隐藏组件有什么区别
+  区别：
+     hidden： 将一个组件隐藏起来时，该组件依然是存在的
+     wx:if :  将一个组件隐藏起来是，该组件根本不存在(压根没有创建)
+  选择：
+     如果显示和隐藏切换频率非常高，选择使用hidden
+     如果显示和隐藏切换频率非常低，那么选择wx:if
+ -->
+<view>-----------wx:if 和 hidden属性的区别--------------</view>
+<view hidden="{{true}}">我是hidden属性控制的内容</view> 
+<view wx:if="{{false}}">我是wx:if控制的内容</view>
+
+<view>------------列表渲染------------</view>
+<!-- 1.wx:for的基础 -->
+<!-- 遍历数组/字符串/数字 -->
+<!-- <view wx:for="{{ ['abc', 'cba', 'nba'] }}">{{item}} --- {{index}} </view> -->
+<!-- <view wx:for="code">{{item}} --- {{index}} </view>
+<view wx:for="{{3}}">{{item}}</view> -->
+
+
+<!-- block标签: 
+  并不是一个组件，仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性(wx:if, wx:for)
+ -->
+<!-- <view>-------block标签-------</view>
+<block wx:if="{{isShow}}">
+  <button>按钮</button>
+  <view>呵呵</view>
+  <text>我是内容</text>
+</block> -->
+
+
+<!-- 3. item和index起名字 -->
+<!-- <view wx:for="{{ movies }}" wx:for-item="movie" wx:for-index="i">{{ i }}--{{ movie }}</view>
+
+<block wx:for="{{nums}}" wx:for-item="innerNums">
+  <block wx:for="{{innerNums}}">
+    <view>{{item}}</view>
+  </block>
+</block> -->
+
+
+<!-- 4.key的作用 -->
+<view wx:for="{{ letters }}" wx:key="index">{{item}}</view>
+
+
+<!-- template -->
+<view>--------template------</view>
+<!-- 
+  之前小程序不支持自定义组件，为了进行代码的复用：template
+  is属性="模板名"：使用模板
+ -->
+ <!-- 模板中包裹的内容，在没有被使用前，是不会进行任何的渲染的 -->
+<!-- <template name="contentItem">
+  <button size="mini">{{ btnText }}</button>
+  <view>{{ content }}</view>
+</template> -->
+<!-- 使用模板: 传入内容
+  <template is="contentItem" data="{{ key1: value1, key2: value2 }}"></template>
+ -->
+
+<!-- <template is="contentItem" data="{{ btnText: '警告', content: '我是模板内容' }}"></template>
+<template is="contentItem" data="{{ btnText: '登录', content: '嘻嘻嘻' }}"></template> -->
+
+
+<!-- 导入抽离出去的模板文件 -->
+<!-- <import src="模板文件的路径(绝对路径/相对路径都可以)" /> -->
+<!-- <import src="/wxml/template.wxml" /> -->
+<import src="../../wxml/template.wxml" />
+<import src="../../wxml/abc.wxml" />
+
+<!-- include不能导入 -->
+<!-- <include src="/wxml/template.wxml" />
+
+<template is="contentItem" data="{{ btnText: '按钮', content: '哈哈哈' }}"></template>
+<template is="abc"></template>
+
+<!-- 结论: include是不能导入模板
+    include可以将目标文件中除了<template/> <wxs/> 外的整个代码引入，相当于拷贝到include位置
+
+    总结: 关于wxml的导入有两种方式
+    import导入
+      1.最主要是导入template的
+      2.特点: 不能进行递归导入
+    include引入
+      1.将公共的wxml中的组件抽取到一个文件中
+      2.特点：不能导入template/wxs, 可以进行递归导入
+ -->
