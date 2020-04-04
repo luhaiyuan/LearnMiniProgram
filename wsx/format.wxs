@@ -1,0 +1,29 @@
+// 价格格式化
+function priceFormat(price, number) {
+  var number = number || 2;
+  // 防止价格传的是字符串
+  var f_price = parseFloat(price);
+  return f_price.toFixed(number);
+}
+
+// 时间格式化
+function dateFormat(timestamp) {
+  var time = getDate(timestamp);
+  var year = time.getFullYear();
+  var month = time.getMonth() + 1;
+  var date = time.getDate();
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  var second = time.getSeconds();
+  month = month < 10 ? "0" + month : month;
+  date = date < 10 ? "0" + date : date;
+  hour = hour < 10 ? "0" + hour : hour;
+  minute = minute < 10 ? "0" + minute : minute;
+  second = second < 10 ? "0" + second : second;
+  return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+}
+
+module.exports = {
+  priceFormat: priceFormat,
+  dateFormat: dateFormat
+}

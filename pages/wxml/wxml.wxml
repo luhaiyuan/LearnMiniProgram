@@ -1,0 +1,10 @@
+<!--pages/wxml/wxml.wxml-->
+<text>25.66666</text>
+<!-- 1.错误的写法 -->
+<!-- <text>{{25.66666.toFixed(2)}}</text> -->
+
+<!-- 
+  注意: wxml中是不能直接调用Page/Component中定义的函数的，所以下面写法也是错误的
+  <text>{{ numberTofixed(25.66666) }}</text>
+ -->
+
