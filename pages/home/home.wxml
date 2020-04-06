@@ -2,4 +2,29 @@
 <!-- 这些都是一个个内置的组件 -->
 <text class="title">Hello World</text>
 <button size="mini">按钮</button>
-<image src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></image>
+
+<!-- 1.通过navigator进行页面跳转 -->
+<navigator url="/pages/detail/detail">跳转到详情页</navigator>
+
+<!-- 2.navigator属性: open-type
+  navigate：默认值，有返回按钮
+  redirect: 直接替换之前按钮，跳到指定页面，但是不能跳到tabBar页面
+  switchTab：可以跳到tabBar页面
+  reLaunch: 把所有页面都关闭，跳到指定页面
+ -->
+<navigator url="/pages/detail/detail" open-type="redirect">跳转到详情页(redirect)</navigator>
+
+<navigator url="/pages/about/about" open-type="switchTab">跳转到关于页(switchTab)</navigator>
+
+<navigator url="/pages/detail/detail" open-type="reLaunch">跳转到详情页(reLaunch)</navigator>
+
+
+<!-- 3.跳转过程中数据的传递-->
+<view>-------页面跳转传递数据--------</view>
+<navigator url="/pages/detail/detail?name=wht&age=18&height=1.88">跳转到详情页</navigator>
+<view>{{ title }}</view>
+
+
+<!-- 4.通过代码进行页面跳转 -->
+<view>------通过代码进行页面跳转------</view>
+<button size="mini" bind:tap="handlePushDetail">跳到详情页</button>
