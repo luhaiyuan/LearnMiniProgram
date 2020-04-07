@@ -1,5 +1,28 @@
 <!--pages/home/home.wxml-->
-<!-- 这些都是一个个内置的组件 -->
-<text class="title">Hello World</text>
-<button size="mini">按钮</button>
-<image src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></image>
+<!-- 1.展示轮播图(使用抽离出去的轮播图组件) 
+  将banners数据从首页传递给轮播图组件
+-->
+<w-swiper list="{{ banners }}"></w-swiper>
+
+<!-- 2.推荐数据的展示 -->
+<w-recommend recommends="{{ recommends }}" bind:imageload="handleImageLoad">
+</w-recommend>
+
+<!-- 3.展示本周流行 -->
+<w-popular></w-popular>
+
+<!-- 4.tab-control
+  bind:tabclick="handleTabClick: 组件发出了一个事件，home页面监听点击了哪一个tab
+ -->
+<w-tab-control titles="{{ titles }}" bind:tabclick="handleTabClick"
+               class="{{ isTabFixed ? 'fixed' : '' }}" id="tab-control">
+</w-tab-control>
+<!-- 用下面这个tab-control占位 -->
+<w-tab-control titles="{{ titles }}" wx:if="{{isTabFixed}}"></w-tab-control>
+
+<!-- 5.展示商品数据 -->
+<w-goods goods="{{ goods[currentType].list }}"></w-goods>
+
+<!-- 6.回到顶部 -->
+<!-- hidden：hidden属性对自定义组件是无效的 -->
+<w-back-top wx:if="{{ showBackTop }}"></w-back-top>
